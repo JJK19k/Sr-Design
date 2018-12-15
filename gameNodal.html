@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nodal Voltage</title>
+
+    <link rel="stylesheet" type="text/css" href="newStyle.css" />
+    <script language="javascript" src="gridUtils.js" type="text/javascript"></script>
+    <script src="closure-library/closure/goog/base.js"></script>
+    <script src="jquery-1.9.1.js" type="text/javascript"></script>
+    <script language="javascript" src="validate.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="pageContain" style="width: 1450px;height: 100%;margin: 0 auto;">
+    <div id="header" style="font-size: 120%; text-align: center;">
+        <h1> Nodal Voltage </h1>
+        <hr>
+    </div>
+
+    <div id="board" style="width:950px;float: left">
+        <table id="boardTab" cellspacing="0">
+            <tr>
+                <td><div data-xpos=0 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=0 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=0 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=1 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=1 class="empty" draggable="true"></div></td>
+
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=2 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=2 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=3 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=3 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=4 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=4 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=5 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=5 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=6 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=6 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=7 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=7 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=8 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=8 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=9 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=9 class="empty" draggable="true"></div></td>
+
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=10 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=10 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=11 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=11 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=12 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=12 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=13 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=13 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=14 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=14 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-xpos=0 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=1 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=2 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=3 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=4 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=5 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=6 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=7 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=8 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=9 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=10 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=11 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=12 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=13 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=14 data-ypos=15 class="empty" draggable="true"></div></td>
+                <td><div data-xpos=15 data-ypos=15 class="empty" draggable="true"></div></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="width: 200px;float: left"></div>
+    <div id="sideBoard" style="width: 400px;float: left">
+        <table id="sideTab" border="0" cellspacing=0>
+            <tr>
+                <td><div data-cellnum=-1 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=0 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=1 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=2 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-cellnum=3 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=4 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=5 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=6 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div data-cellnum=7 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=8 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=9 class="empty" draggable="true"></div></td>
+                <td><div data-cellnum=10 class="empty" draggable="true"></div></td>
+            </tr>
+            <tr>
+                <td><div style="height: 10px"></div></td>
+            </tr>
+            <tr>
+                <td colspan="1"><button id="nodalVBut" type="button" onclick="generateNodes()" disabled> Analyze </button></td>
+                <td colspan="1"><button id="dispValBut" type="button" onclick="dispToggle()" disabled> Toggle Values </button></td>
+                <td colspan="1"><button id="toggleConnectedBut" type="button" onclick="toggleConnected()" disabled> Toggle Disconnected Components  </button></td>
+                <td colspan="1"><button id="resetBut" type="button" onclick="resetBoard()" disabled> Reset </button></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <select name="puzzleSelect" onchange="choosePuzzle(this)">
+                        <option pname="TestPuz1">Test Puzzle 1</option>
+                        <option pname="TestPuz2">Test Puzzle 2</option>
+
+
+                    </select>
+                </td>
+                <td colspan="1">
+                    <button id="printBut" type="button" onclick="printArray()" disabled> Print </button>
+                </td>
+            </tr>
+            <tr>
+                <td><div style="height: 10px"></div></td>
+            </tr>
+            <tr>
+                <td colspan="4"><div id="instBox" style="height: 75px;float: left"></div></td>
+            </tr>
+            <tr>
+                <td colspan="4"><div id="resultsBox" style="height: 300px;float: left"></div></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+<!--
+<div style="text-align: center; color: rgb(50,50,50); float: left">
+    <hr>
+    <p> Site Design and Code &trade; AOK Industries 2012 - 2013 </p>
+</div>
+-->
+
+<script language="javascript" src="dbUtils.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+var theGrid = new Grid();
+var dragSrcEl = null;
+
+var dispVals = true;
+var firstLoad = true;
+var showUnconnected = true;
+var largeBoard = true;
+
+function resetNodes() {
+    for(var i = 0; i< theGrid.width; i++) {
+        for (var j = 0; j < theGrid.height; j++) {
+            theGrid.gridArray[i][j].node = -1;
+        }
+    }
+}
+
+function resetLabels() {
+    for(var i = 0; i< theGrid.width; i++) {
+        for (var j = 0; j < theGrid.height; j++) {
+            theGrid.gridArray[i][j].label = "";
+        }
+    }
+}
+
+
+
+// Callback for the nodal voltage button, nodeStr is the string alex needs
+function generateNodes() {
+    resetNodes();
+    resetLabels();
+    var resultEle = document.getElementById('resultsBox'); // set up the text box for NV analysis results
+    //alert("Conducting a series of tests to ensure NV Analysis is working correctly.");
+    //test_analysis_routine();
+    var nodeStr = new String();
+    var tempGArray = theGrid.copyGridArray();
+    if(verifyConnectivity(tempGArray)) {
+        //alert('Connected');
+        walkWires(tempGArray);
+    } else {
+        alert("Circuit not Connected");
+        return;
+    }
+
+    showUnconnected = true;
+
+    nodeStr = buildNodeString(tempGArray);
+    if(nodeStr == "") {
+        alert("No components in circuit, please add a Voltage source and reisistor");
+        return;
+    }
+
+    //Update board so that only connected elements were labeled
+    for(var i = 0; i < theGrid.width; i++) {
+        for(var j = 0; j < theGrid.height; j++) {
+            if(tempGArray[i][j].label != "")
+                theGrid.gridArray[i][j].label = new String(tempGArray[i][j].label);
+        }
+    }
+    // Take the nodeStr and put into the Nodal-Voltage Analysis Method
+    var analysis_result = analyze_circuit(nodeStr); // call the Nodal-Voltage Circuit Analysis Method from the Validation Logic Suite
+    //alert(analysis_result);
+    resultEle.innerHTML = "<b><u>Circuit Analysis Matrix Results:</u></b>  </BR>" + analysis_result; // set results
+    toggleConnected(); // update the board with filled-in NV Analysis text box
+}
+
+/*
+ This method searches the grid for wires which are not already part of a node and calls setNode to create a new node
+
+ It keeps track of the number of nodes already found so each can have a unique number
+ */
+function walkWires(tempG) {
+    var currentNode = 0;
+    for(var i = 0; i < tempG.length; i++) {
+        for (var j = 0; j < tempG[0].length; j++) {
+
+            var gridObj = tempG[i][j];
+
+            if(gridObj.type == 'wire' || gridObj.type == 'junct' || gridObj.type == 'light' || gridObj.type == 'switch') {
+                if(gridObj.node == -1) {
+                    //alert("Walking " + i + ", " + j);
+                    setNode(i, j, currentNode, tempG);
+                    currentNode++;
+                }
+            }
+        }
+    }
+}
+
+function toggleConnected() {
+    resetNodes();
+    if(showUnconnected) {
+
+        var tempG = theGrid.copyGridArray();
+        verifyConnectivity(tempG);
+        for(var i = 0; i < theGrid.width; i++) {
+            for(var j = 0; j < theGrid.height; j++) {
+                var gObj = theGrid.gridArray[i][j];
+                var tempGObj = tempG[i][j];
+                if(gObj.type !='empty' && tempGObj[i][j].type == 'empty')
+                    gObj.node = -2;
+            }
+        }
+
+        showUnconnected = false;
+    } else
+        showUnconnected = true;
+
+    updateBoardGUI();
+}
+
+function printArray() {
+    alert(theGrid.toString());
+}
+
+function dispToggle() {
+//alert("Toggling Values, they were " + dispVals);
+    dispVals = !dispVals;
+//alert("They are now " + dispVals);
+    updateBoardGUI();
+}
+
+ 
+
+
+</script>
+
+
+</body>
+</html>

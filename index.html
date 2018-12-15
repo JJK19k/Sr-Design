@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+</head>
+<body>
+
+<canvas id="mainCanvas" width="1600px" height="1200" ><p>Your browser does not support HTML5!</p></canvas>
+<div id="menuBar">
+    <nav style="position:absolute;left:720px;top:120px">
+        <a href="index.html">Home</a>
+        <a href="javascript:goLogin()">Log In</a>
+        <a href="javascript:goRegister()">Register</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="javascript:goMyAccount()">myAccount</a>
+        <a href="javascript:logOutUser()">Log Out</a>
+    </nav>
+    <audio style="position:absolute;left:5px;top:15px"id="bmusic" controls src="AOK_Theme_Mix.mp3" autoplay loop ></audio>
+    <div class ="form" style="width:820px; position:absolute;left:300px;top:225px">
+
+        <table id="playTable" >
+            <tr><td><img onclick="window.location.href='game.html'" src="Images/ohm.png"></td><td><img onclick="window.location.href='gameNodal.html'" src="Images/nodal.png"></td></tr>
+            <tr><td style="text-align: center">Allows users to create basic series and parallel circuits and run a simple analysis tool.</td><td style="text-align: center">Allows users to create arbritrary circuits and run an advanced nodal analysis tool.</td></tr>
+            <tr><td style="text-align: center"><input class="buttons" name="playOhm" id="playOhm" tabindex="5" value="Play Basic!" type="button" onclick="continueToOhmGame()"></td><td style="text-align: center"><input class="buttons" name="playNodal" id="playNodal" tabindex="5" value="Play Advanced!" type="button" onclick="continueToNodalGame()"></td></tr>
+        </table>
+
+
+    </div>
+</div>
+<script type="text/javascript">
+
+
+    var canvas = document.getElementById("mainCanvas");
+    var context = canvas.getContext("2d");
+
+    var width = canvas.getAttribute('width');
+    var height = canvas.getAttribute('height');
+
+    var logo = new Image();
+    logo.src = "Images/logoAOK.png";
+
+    var background = new Image();
+    background.src = "Images/Background.png";
+
+    var logoEdison = new Image();
+    logoEdison.src = "Images/logoEdison.png";
+
+
+    timerId = setInterval("update()", 1000/frames);
+
+    function renderPage(){
+        context.drawImage(background,0, 0);
+        context.drawImage(logo,715, 20);
+        context.drawImage(logoEdison,60, 80);
+
+    }
+
+    function update() {
+        clear();
+        renderPage();
+    }
+
+    function clear() {
+        context.clearRect(0, 0, width, height);
+    }
+
+    function continueToOhmGame(){
+        window.location.href = "game.html";
+    }
+    function continueToNodalGame(){
+        window.location.href = "gameNodal.html";
+    }
+
+    function goLogin(){
+        if(sessionStorage.getItem("username") == null){
+            window.location.href = "userPage.html";
+        }else{
+            alert("User "+sessionStorage.username+" is still logged in!!");
+        }
+    }
+
+    function goRegister(){
+        if(sessionStorage.getItem("username") == null){
+            window.location.href = "registerUser.html";
+        }else{
+            alert("User "+sessionStorage.username+" is still logged in!! You cannot register!");
+        }
+    }
+
+    function goMyAccount(){
+
+        if(sessionStorage.getItem("username") == null){
+            alert("No user is currently logged in!! Please log in or register!");
+
+        }else{
+            window.location.href = "myAccount.html";
+        }
+    }
+
+    function logOutUser(){
+        if(sessionStorage.getItem("username") == null){
+            alert("No user is currently logged in!! Please log in or register!");
+
+        }else{
+            alert("User "+sessionStorage.username+" has successfully logged out!") ;
+            sessionStorage.removeItem("userID");
+            sessionStorage.removeItem("username");
+            sessionStorage.removeItem("userType");
+
+            window.location.href = "index.html";
+
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>

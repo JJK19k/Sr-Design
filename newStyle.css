@@ -1,0 +1,455 @@
+p{
+     margin-top:20px;
+}
+
+[draggable] {
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}
+
+.smallGridTile {
+   height: 100px;
+   width: 100px;
+   float: left;
+   display: block;
+   margin-right: 0px;
+   text-align: center;
+   cursor: move;
+}
+
+.largeGridTile {
+    height: 50px;
+    width: 50px;
+    float: left;
+    display: block;
+    margin-right: 0px;
+    text-align: center;
+    cursor: move;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.resistor {
+     border: solid 2px red;
+     background: url('Images/resistor.png');
+ }
+
+.resistor1 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor5 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor10 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor15 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor20 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor25 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor30 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor35 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor40 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor45 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor50 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor55 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor60 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor65 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor70 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor75 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor80 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor85 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor90 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor95 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor100 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor150 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor200 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor100 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor300 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor400 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor500 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor600 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor700 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor800 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor900 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+.resistor100 {
+    border: solid 2px red;
+    background: url('Images/resistor.png');
+}
+
+.resistorV {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+
+.resistor1V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor5V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor10V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor15V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor20V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor25V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor30V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor35V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor40V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor45V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor50V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor55V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor60V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor65V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor70V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor75V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor80V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor85V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor90V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor95V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor100V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor200V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor300V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor400V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor500V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor600V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor700V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor800V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor900V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+.resistor100V {
+    border: solid 2px red;
+    background: url('Images/resistorV.png');
+}
+
+
+
+
+.resistorv {
+
+   border: solid 2px red;
+   background: url('Images/resistor_v.jpg');
+}
+
+.battery {
+
+   border: solid 2px black;
+   background: url('Images/battery.png');
+}
+
+.light {
+   border: solid 2px white;
+   background: url('Images/light.png');
+}
+
+
+.lightO {
+    border: solid 2px white;
+    background: url('Images/lightO.png');
+
+}
+
+.wire {
+   border: solid 2px black;
+   background: url('Images/wire.jpg');
+}
+
+.wirev {
+   border: solid 2px white;
+   background: url('Images/wire_v.png');
+}
+
+.wireh {
+   border: solid 2px white;
+   background: url('Images/wire_h.png');
+}
+
+.wiretr {
+   border: solid 2px white;
+   background: url('Images/wire_tr.png');
+}
+
+.wiretl {
+   border: solid 2px white;
+   background: url('Images/wire_tl.png');
+
+}
+
+.wirebr {
+   border: solid 2px white;
+   background: url('Images/wire_br.png');
+}
+
+
+.wirebl {
+   border: solid 2px white;
+   background: url('Images/wire_bl.png');
+}
+
+
+.junct {
+   border: solid 2px white;
+   background: url(Images/junct.png);
+}
+
+.junctt {
+   border: solid 2px white;
+   background: url(Images/junctt.png);
+}
+
+
+.junctr {
+   border: solid 2px white;
+   background: url(Images/junctr.png);
+}
+
+.junctb {
+   border: solid 2px white;
+   background: url(Images/junctb.png);
+}
+
+.junctl {
+   border: solid 2px white;
+   background: url(Images/junctl.png);
+}
+
+
+.juncttr {
+   border: solid 2px white;
+   background: url(Images/junct_tr.png);
+}
+
+
+.juncttl {
+   border: solid 2px white;
+   background: url(Images/junct_tl.png);
+}
+
+.junctbr {
+   border: solid 2px white;
+   background: url(Images/junct_br.png);
+}
+
+.junctbl {
+   border: solid 2px white;
+   background: url(Images/junct_bl.png);
+}
+
+.switch {
+    border: solid 2px white;
+    background: url(Images/switch.png);
+}
+
+.switchC {
+    border: solid 2px white;
+    background: url(Images/switchC.png);
+}
+
+.switchV {
+    border: solid 2px white;
+    background: url(Images/switchV.png);
+}
+
+.switchVC {
+    border: solid 2px white;
+    background: url(Images/switchVC.png);
+}
+
+.empty {
+   border: solid 2px white;
+   background-color: white;
+}
+
+.over {
+    border: 2px dashed #000;
+}
+
+/*tr, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+*/
+body {
+    background-color:#b0c4de;
+}
+
+
